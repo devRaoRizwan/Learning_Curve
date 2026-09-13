@@ -1,0 +1,40 @@
+# Learning Curve
+
+Learning Curve is a personal codebase for learning, experimenting with, and documenting different technologies through small examples and practical projects.
+
+The repository will grow as new concepts are explored. Each folder contains focused code, experiments, or examples related to a specific technology or learning path.
+
+## Current Contents
+
+```text
+.
+|-- fast_api/
+|   `-- FastAPI-01-BLOG/
+|       `-- main.py
+`-- README
+```
+
+### FastAPI
+
+The `fast_api/FastAPI-01-BLOG` folder contains the starting point for a FastAPI blog example. It is intended to evolve as FastAPI concepts and backend development patterns are learned.
+
+## Purpose
+
+- Practice technologies through working code
+- Keep learning examples organized by topic
+- Record progress from simple experiments to larger projects
+- Revisit concepts through readable, focused examples
+
+## Getting Started
+
+Browse the folders for the technology you want to explore. Individual projects may include their own setup instructions and dependencies as they become more complete.
+
+For the current Python example, run:
+
+```bash
+python3 fast_api/FastAPI-01-BLOG/main.py
+```
+
+## Status
+
+This repository is actively evolving. Some examples may be incomplete by design while a concept is being explored.

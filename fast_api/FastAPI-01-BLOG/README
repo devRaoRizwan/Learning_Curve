@@ -1,6 +1,63 @@
-i have created the requirments.txt too so i only did pip3 install fastapi[standard]
-and to run the fastapi server i used the command fastapi dev main.py -- it provides hot reload and debugging things too rahter than using fastapi run main.py
-to see the docs add /docs after the localhost url 
-it shows interactive swagger ui that is automatically generated
+# FastAPI Blog
 
-another thing is /redoc which is another way to show the docs
+A small FastAPI learning project that serves a sample blog post as HTML and exposes the posts through a JSON API. The posts are currently stored in memory and are defined in `main.py`.
+
+## Features
+
+- FastAPI application with automatic API documentation
+- `GET /posts` HTML page showing the first blog post
+- `GET /` alternate HTML route for the same page, hidden from the API schema
+- `GET /api/posts` endpoint for the sample blog posts
+- Development server with hot reload
+
+## Setup
+
+Create and activate a virtual environment from this directory:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install the project dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run the Server
+
+Start the development server with hot reload:
+
+```bash
+fastapi dev main.py
+```
+
+The API is available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Use `Ctrl+C` to stop the server.
+
+## API Endpoints
+
+| Method | Path | Description |
+| --- | --- | --- |
+| `GET` | `/posts` | Renders the first blog post as HTML |
+| `GET` | `/` | Renders the same HTML page; excluded from generated docs |
+| `GET` | `/api/posts` | Returns the sample blog posts |
+
+The `/` and `/posts` routes are mapped to the same function. The root route uses `include_in_schema=False`, so it does not appear in Swagger UI or ReDoc.
+
+## API Documentation
+
+FastAPI generates interactive documentation automatically:
+
+- Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## Learning Notes
+
+This project is an early step toward a complete blog backend. Current topics include route decorators, mapping multiple paths to one function, HTML responses with `HTMLResponse`, and controlling which routes appear in the generated schema. Future improvements may include request and response models, create/update/delete operations, validation, a database, authentication, and tests.

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
@@ -20,10 +21,10 @@ posts: list[dict] = [
     },
 ]
 
-@app.get("/")
+@app.get("/" , response_class= HTMLResponse , include_in_schema=False) # we will add include_in_schema key to ensure it doesnt shows in the docs ( the html endpoints)
+@app.get("/posts" , response_class=HTMLResponse) #what we did here is mapped two diff endpoints(/ and /posts) to same function
 def home() :
-    return {"message" : "Hello World"}
-
+    return f"<h1>{posts[0]["title"]}</h1>"
 
 @app.get("/api/posts")
 def get_posts():

@@ -1,0 +1,6 @@
+i have created the requirments.txt too so i only did pip3 install fastapi[standard]
+and to run the fastapi server i used the command fastapi dev main.py -- it provides hot reload and debugging things too rahter than using fastapi run main.py
+to see the docs add /docs after the localhost url 
+it shows interactive swagger ui that is automatically generated
+
+another thing is /redoc which is another way to show the docs

@@ -1,6 +1,7 @@
 from fastapi import FastAPI , Request , HTTPException , status
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from schemas import PostCreate , PostResponse
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -28,11 +29,11 @@ posts: list[dict] = [
 def home(request : Request) :
     return templates.TemplateResponse(request, name="home.html" , context= {"posts" : posts , "title" : "Home"})
 
-@app.get("/api/posts")
+@app.get("/api/posts" , response_model=list[PostResponse]) #we use list because we want to return many
 def get_posts():
     return posts
 
-@app.get("/api/posts/{post_id}")
+@app.get("/api/posts/{post_id}" , response_model= PostResponse)
 def get_post(post_id : int):
     for post in posts :
         if post.get("id") == post_id :

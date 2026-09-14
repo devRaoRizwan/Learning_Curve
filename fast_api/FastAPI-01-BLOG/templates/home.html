@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FastAPI Blog</title>
+    <title>{%if title %}</title>
+      FastAPI Blog - {{title}}
+    {%else%}
+      FastAPI Blog
+    {%endif%}
   </head>
   <body>
     <h1>Home Page</h1>
-    <p>This is using a template!</p>
+    {% for post in posts %}
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p>
+    {% endfor%}
   </body>
 </html>

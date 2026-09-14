@@ -38,3 +38,33 @@ python3 fast_api/FastAPI-01-BLOG/main.py
 ## Status
 
 This repository is actively evolving. Some examples may be incomplete by design while a concept is being explored.
+
+## Git Commit Messages
+
+Use a short, clear commit message that explains what changed:
+
+```text
+<type>: <short description>
+```
+
+Recommended types:
+
+| Type | Use for |
+| --- | --- |
+| `feat` | Adding a new feature or learning example |
+| `fix` | Correcting a bug or mistake |
+| `docs` | Updating README files or other documentation |
+| `refactor` | Changing code structure without changing behavior |
+| `test` | Adding or updating tests |
+| `chore` | Maintenance, dependencies, or configuration |
+
+Examples:
+
+```bash
+git commit -m "docs: update FastAPI blog README"
+git commit -m "feat: add blog posts endpoint"
+git commit -m "fix: correct post response data"
+git commit -m "chore: add FastAPI dependencies"
+```
+
+Keep messages in the imperative mood, use lowercase after the colon, and keep the first line concise.
